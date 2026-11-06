@@ -361,7 +361,7 @@ def verdict_struct(rows: list):
     wrong = sum(r[v]["best"] != r["plain"]["best"] for r, v in pairs)
     capped = sum(r["plain"]["capped"] for r in rows)
     return "info", (f"Knoten bei n = {n} (ohne / Plätze / Zwillinge / beides; „+“: Obergrenze von {count(C.NODE_CAP)} Knoten erreicht, nicht zu Ende gerechnet): " + "; ".join(out) + f". Bester Wert verschieden zwischen den Varianten in {wrong} von {len(pairs)} Vergleichen (nur zu Ende gerechnete Läufe); ohne Symmetrie nicht zu Ende gerechnet: {capped} Läufe. "
-                    "Gilmore–Lawler ist bei „Ring“ und „Nabe“ so scharf, dass der Baum schon ohne Symmetrie klein bleibt.")
+                    "Bei „Ring“ und „Nabe“ liegen die Schranken der Knoten unter dem ersten Bauteil schon über dem Anfangswert, sodass der Baum ohne Symmetrie klein bleibt.")
 
 
 def verdict_probe(p: dict):

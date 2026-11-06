@@ -110,7 +110,7 @@ def test_the_comparison_buttons_fill_their_sections(monkeypatch):
     assert not at.exception and "n = 6 (6 Instanzen, |G| = 4)" in text and "n = 8 (6 Instanzen, |G| = 4)" in text and "bester Wert gleich in 6 von 6" in text and len(at.get("plotly_chart")) == 6 + 1
     at.button(key="struct_ok_button").click().run()
     text = _texts(at)
-    assert not at.exception and "„Zwei Hälften“" in text and "Gilmore–Lawler ist bei „Ring“ und „Nabe“ so scharf" in text and len(at.get("plotly_chart")) == 6 + 1 + 1
+    assert not at.exception and "„Zwei Hälften“" in text and "Bei „Ring“ und „Nabe“ liegen die Schranken der Knoten unter dem ersten Bauteil schon über dem Anfangswert" in text and len(at.get("plotly_chart")) == 6 + 1 + 1
     at.button(key="probe_ok_button").click().run()
     text = _texts(at)
     assert not at.exception and "6 zufällige Flussmatrizen mit erzwungenen Zwillingspaaren" in text and "0 / 0 / 0 / 0" in text

@@ -161,7 +161,7 @@ else:
     m1.metric("Platzsymmetrien |G|", f"{len(v['G'])}", help="Symmetrien des Rasters (geprüft an den Abständen).")
     m2.metric("Anordnungen bis auf Plätze", count(v["orbits_G"]), delta=f"von {count(v['arrangements'])}", delta_color="off", help="n!/|G|: die Platzsymmetrie wirkt frei, jede Bahn hat |G| Anordnungen.")
     m3.metric("Knoten mit der gewählten Variante", count(sel["nodes"]) + ("+" if sel["capped"] else ""), delta=f"ohne Symmetrie {count(plain['nodes'])}" + ("+" if plain["capped"] else ""), delta_color="off", help="Bewertete Kinder des Baums; „+“: Obergrenze erreicht, nicht zu Ende gerechnet.")
-    m4.metric("Verhältnis ohne gegen mit", de(ratio(plain["nodes"], sel["nodes"]), 2), help="Knoten ohne Symmetrie durch Knoten mit der gewählten Variante; bei der Platzsymmetrie allein höchstens |G|.")
+    m4.metric("Verhältnis ohne gegen mit", de(ratio(plain["nodes"], sel["nodes"]), 2), help="Knoten ohne Symmetrie durch Knoten mit der gewählten Variante; bei der Platzsymmetrie allein höchstens |G| (bewiesen für einen festen Anfangswert gleich dem Optimum, sonst gemessen).")
     m5.metric("Bester Wert", f"{sel['best']:.0f}", delta="wie ohne Symmetrie" if sel["best"] == plain["best"] else "ANDERS als ohne Symmetrie", delta_color="off" if sel["best"] == plain["best"] else "inverse", help="Der beste Wert des Baums; mit Symmetrie muss er gleich sein.")
     c1, c2 = st.columns(2)
     with c1:
@@ -292,13 +292,13 @@ st.markdown(
     """
 | Annahme | Was passiert, wenn sie verletzt ist | Wer setzt an |
 |---|---|---|
-| **Der Gewinn ist klein** | Die Platzsymmetrie spart höchstens den Faktor der Gruppengröße (4 oder 8); gegen eine schärfere Schranke (Stück 5, 7) ist das ein kleiner, fester Faktor. Der große Gewinn steht an erfundenen symmetrischen Flüssen (Zwillinge), nicht an der Platine. | Stück 5, 7 |
+| **Der Gewinn ist klein** | Die Platzsymmetrie spart höchstens den Faktor der Gruppengröße (4 oder 8); mit schärferen Schranken (Stück 5, 7) ist der Gewinn nicht gemessen, bleibt aber durch die Gruppengröße nach oben begrenzt. Der große Gewinn steht an erfundenen symmetrischen Flüssen (Zwillinge), nicht an der Platine. | Stück 5, 7 |
 | **Eigene Fassung** | Orbit-Beschneiden mit der Stabilisatorkette und die Zwillingsordnung sind eigene Herleitungen; die Literatur zur Symmetriebrechung (Orbit-Fixierung, Lex-Leader, Margot) ist **nicht eingesehen**. | Abzählen-Linie (Burnside) |
 | **Kombination nicht bewiesen** | Platzsymmetrie und Zwillingsordnung zusammen verloren in 300 Zufallsinstanzen und den strukturierten Familien nie das Optimum; ein Beweis ist das nicht (allgemein verlangt man eine lexikographische Bedingung für das Produkt der Gruppen). Ein Fehler wäre still. | – |
 | **Nur Rechteck-Raster** | Die Gruppe der Plätze sind die Symmetrien des Rechtecks (geprüft an `D` gegen alle `n!` Permutationen bis `n = 9`); andere Anordnungen der Plätze (Ringe, Hallen) sind nicht gebaut. | Stück 1 |
 | **Bauteilsymmetrie nur über Zwillinge** | Allgemeine Automorphismen der Flüsse werden gezählt (Burnside), im Baum aber nur als Zwillinge genutzt; bei mehr als 50 000 Automorphismen wird nicht gezählt. | – |
 | **Nur Gilmore–Lawler im Baum** | Mit der linearen oder der SDP-Schranke am Knoten ist der Gewinn nicht gemessen. | Stück 7, 8 |
-| **Ohne Anfangswert kleiner** | Der Baum muss zuerst eine Lösung finden; der Gewinn ist kleiner und streut (Median etwa 2,3 bis 6,5 gegen 4 bis 8, kleinstes etwa 1,2). | – |
+| **Ohne Anfangswert kleiner** | Der Baum muss zuerst eine Lösung finden; der Gewinn ist kleiner und streut (Median etwa 2,3 bis 6,5 gegen 3,6 bis 7,4 mit Anfangswert, kleinstes etwa 1,2). | – |
 | **Die Familien sind erfunden** | Echte Platinen haben andere Flüsse; die vier symmetrischen Familien sind eigens so gebaut, dass Zwillinge entstehen. | Stück 2 |
 | **Wenige Instanzen und kleine Größen** | n = 6, 8: 30 Instanzen, n = 9, 12: 18; keine QAPLIB, keine Raster über 3×4 im Baum. | – |
 | **Zeit ist implementierungsabhängig** | Python-Fassung; Zeiten schwanken um das Doppelte, in Tests stehen nie Zeiten. Die Knotenzahlen sind ganzzahlig und rechnerunabhängig. | – |
