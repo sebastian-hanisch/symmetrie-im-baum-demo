@@ -1,9 +1,8 @@
 # Symmetrie im Baum – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-symmetrie-im-baum-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-symmetrie-im-baum-demo.streamlit.app/)**
 
-Stück 13 von 15 (gelb, optional) der **Konzepte-Reihe „Anordnen: relaxieren und runden“** für die Website „Sebastian Hanisch – Operations Research und Machine Learning“ (die Konzepte-Seite der Reihe gibt es noch nicht). Der Baum stammt aus Stück [8, Branch and Bound](https://github.com/sebastian-hanisch/schranke-im-baum-demo), die Schranke aus Stück [3, Gilmore–Lawler](https://github.com/sebastian-hanisch/gilmore-lawler-demo); Stück [1](https://github.com/sebastian-hanisch/quadratische-zuordnung-demo) zählt Spiegelbilder noch „roh“. Burnside und Pólya allgemein stehen in der Abzählen-Linie ([Burnside und Pólya](https://github.com/sebastian-hanisch/burnside-polya-demo), [Isomorphieausschluss](https://github.com/sebastian-hanisch/isomorphieausschluss-demo)); hier ist es eine **Anwendung im Baum**.
+Stück 13 von 15 (gelb, optional) der **Konzepte-Reihe „Anordnen: relaxieren und runden“** für die Website „Sebastian Hanisch – Operations Research und Machine Learning“ (die [Konzepte-Seite der Reihe](https://sebastianhanisch.net/konzepte-anordnen.html)). Der Baum stammt aus Stück [8, Branch and Bound](https://github.com/sebastian-hanisch/schranke-im-baum-demo), die Schranke aus Stück [3, Gilmore–Lawler](https://github.com/sebastian-hanisch/gilmore-lawler-demo); Stück [1](https://github.com/sebastian-hanisch/quadratische-zuordnung-demo) zählt Spiegelbilder noch „roh“. Burnside und Pólya allgemein stehen in der Abzählen-Linie ([Burnside und Pólya](https://github.com/sebastian-hanisch/burnside-polya-demo), [Isomorphieausschluss](https://github.com/sebastian-hanisch/isomorphieausschluss-demo)); hier ist es eine **Anwendung im Baum**.
 
 ## Warum dieses Problem
 
